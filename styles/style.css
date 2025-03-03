@@ -58,7 +58,7 @@ ol {
   display: grid;
   grid-template-columns: 711px 399px;
   grid-template-areas: "result details";
-  gap: 35px;
+  gap: 30px;
   align-items: flex-end;
 }
 
@@ -79,6 +79,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -89,6 +90,7 @@ ol {
 }
 
 .search-form__label {
+  width: fit-content;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -103,8 +105,8 @@ ol {
 
 .search-form__fieldset-title {
   font-weight: 400;
-  font-size: 19px;
-  line-height: 23px;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .search-form__checkbox-list {
@@ -132,8 +134,7 @@ fieldset {
 }
 
 .search-form__textfield {
-  width: 225px;
-  height: 27px;
+  inline-size: 225px;
   border: none;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
@@ -176,8 +177,8 @@ fieldset {
   background-color: #fff;
 }
 
-.search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
-  outline: 2px solid #000;
+.search-form__label:has(:focus-visible) {
+  box-shadow: 0 0 0 2px #000;
   outline-offset: 2px;
 }
 
@@ -187,13 +188,12 @@ fieldset {
 
 /*-------------Кнопки----*/
 .button {
-  background-color: rgba(27, 25, 25, 1);
+  background-color: transparent;
   color: #fff;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 600;
   font-size: 18px;
   border: 2px solid #fff;
-  border-radius: 4px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -219,12 +219,12 @@ fieldset {
 .search-form__submit-button {
   width: 189px;
   height: 35px;
-  margin-left: auto;
   margin-top: 20px;
 }
 
 .more-button {
   width: 100%;
+  height: 34px;
   margin-top: 20px;
 }
 
@@ -233,7 +233,7 @@ fieldset {
   position: relative;
   block-size: 298px;
   overflow: auto; /* Скролл при переполнении */
-  padding-right: 6px;
+  padding-right: 3px;
 }
 
 .content__details {
@@ -241,7 +241,7 @@ fieldset {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 21px;
+  gap: 26px;
   inline-size: 100%;
   block-size: 100%;
   max-inline-size: 399px;
@@ -263,12 +263,14 @@ fieldset {
   height: 103px;
   flex-shrink: 0; /* Запрещаем сжатие */
   overflow: hidden;
+  object-fit: cover;
+  object-position: center;
 }
 
 .title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-size: 75px;
-  line-height: 70.5px;
+  line-height: 94%;
   text-transform: uppercase;
 }
 
@@ -276,11 +278,11 @@ fieldset {
   flex-grow: 1; /* Занимает всё доступное пространство */
   display: flex;
   flex-direction: column;
-  margin-bottom: 6px;
+  gap: 4px;
 }
 
 .content__video-card-title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
@@ -291,7 +293,7 @@ fieldset {
 }
 
 .content__video-card-description {
-  line-height: 30.2px;
+  line-height: 16.2px;
   display: -webkit-box; /* Включаем flexbox для line-clamp */
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
