@@ -160,30 +160,20 @@ fieldset {
 /*-----------Чекбокс---------------*/
 .search-form__pseudo-checkbox {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 19px;
   height: 19px;
   border: 1px solid #fff;
-  vertical-align: middle;
   cursor: pointer;
 }
 
-.search-form__pseudo-checkbox::after {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 15px;
   height: 15px;
   background-color: #fff;
-  border-radius: 2px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  opacity: 1;
 }
 
 .search-form__checkbox:focus-visible + .search-form__pseudo-checkbox {
